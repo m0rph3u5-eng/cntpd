@@ -5,12 +5,12 @@ import "./App.css";
 import { Popover, Transition } from "@headlessui/react";
 
 import ReactPlayer from "react-player";
-import logo from './logo.png'; // Tell webpack this JS file uses this image
-import thumb0 from './0.jpg';
-import thumb1 from './1.jpg';
-import thumb2 from './2.jpg';
-import thumb3 from './3.jpg';
-import thumb4 from './4.jpg';
+import logo from "./logo.png"; // Tell webpack this JS file uses this image
+import thumb0 from "./0.jpg";
+import thumb1 from "./1.jpg";
+import thumb2 from "./2.jpg";
+import thumb3 from "./3.jpg";
+import thumb4 from "./4.jpg";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -68,7 +68,11 @@ export default function Example() {
               href="#"
               className="text-base font-medium text-gray-500 hover:text-gray-900"
             >
-              <h1 className="text-2xl">+</h1>
+              <input
+                class="search py-1 px-1"
+                type="text"
+                placeholder="Search by the title ..."
+              />
             </a>
 
             <Popover className="relative">
@@ -206,54 +210,59 @@ export default function Example() {
       </Transition>
       <div class="flex">
         <div class="w-4/5 bg-white-500 h-50 py-5 px-5">
-        <ReactPlayer
-            className='react-player fixed-bottom'
-            url= '0.mkv'
-            width='100%'
-            height='40%'
-            controls = {true}
-
-            />
           <ReactPlayer
-  playing
-  url={[
-    {src: './1.mp4', type: 'video/mp4'},
-    {src: './0.mkv', type: 'video/mkv'}
-  ]}
-/>
-         
+            className="react-player fixed-bottom"
+            url="1.mp4"
+            width="100%"
+            height="70%"
+            controls={true}
+            muted={false}
+          />
+        
+        
         </div>
-        <div class="w-1/5 bg-white-400 h-96 overflow-auto py-5 px-5" >
+        <div class="w-1/5 bg-white-400 h-screen overflow-auto py-5 px-5">
           <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
             <li class="pb-3 sm:pb-4">
-            <input
-      class="search py-1 px-1"
-      type="text"
-     
-      placeholder="Search by the title ..."
-    />
-      <div class="pt-2 relative mx-auto text-gray-600">
-        <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"></input>
-        <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
-          
-      
-        </button>
-      </div>
+              <input
+                class="search py-2 px-1"
+                type="text"
+                placeholder="Search by the title ..."
+              />
+
               <div class="flex items-center space-x-4">
                 <div class="flex-shrink-0">
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
-                <div class="flex-1 min-w-0">
-                <img src={logo} style={{width: 75}} alt="Logo" />
+                <div class="flex-1 min-w-0 bg-[#f1f5f9] rounded-md p-5">
+                  <img src={logo} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                     My Mix
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Don Toliver, Paramore, Brent Faiyaz, and more
+                    Don Toliver, Paramore, Brent Faiyaz, and more
+                  </p>
+                </div>
+                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"></div>
+              </div>
+            </li>
+          </ul>
+          <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="pb-3 sm:pb-4">
+              <div class="flex items-center space-x-4 flex-1 min-w-0 bg-[#f1f5f9] rounded-md p-5">
+              <img src={thumb0} style={{ width: 75 }} alt="Logo" />
+                
+                <div class="flex-1 min-w-0 bg-[#f1f5f9] rounded-md p-5">
+                 
+                  <p class="text-sm font-medium text-gray-900 dark:text-white">Body [Official Music Video]
+                  </p>
+              
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Summer Walker
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  
+                  46M views
                 </div>
               </div>
             </li>
@@ -265,17 +274,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={thumb0} style={{width: 75}} alt="Logo" />
+                  <img src={thumb1} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Summer Walker - Body [Official Music Video]
+                    Paramore: Decode [OFFICIAL VIDEO]
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Summer Walker
-
+                    Paramore
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                46M views
+                  420M views
                 </div>
               </div>
             </li>
@@ -287,17 +295,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={thumb1} style={{width: 75}} alt="Logo" />
+                  <img src={thumb2} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Paramore: Decode [OFFICIAL VIDEO]
+                    Monica - Angel Of Mine (Official Music Video)
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Paramore
-
+                    monicaofficial
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                420M views 
+                  117M views
                 </div>
               </div>
             </li>
@@ -309,17 +316,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={thumb2} style={{width: 75}} alt="Logo" />
+                  <img src={thumb3} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Monica - Angel Of Mine (Official Music Video)
+                    LANA DEL REY- BORN TO DIE
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  monicaofficial
-
+                    Lana Del Rey
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                117M views
+                  58M views
                 </div>
               </div>
             </li>
@@ -331,17 +337,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={thumb3} style={{width: 75}} alt="Logo" />
+                  <img src={thumb4} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  LANA DEL REY- BORN TO DIE
+                    Teddy Pendergrass - Love T.K.O. (Official Audio)
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Lana Del Rey
-
+                    Teddy Pendergrass
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                58M views
+                  13M views
                 </div>
               </div>
             </li>
@@ -353,17 +358,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={thumb4} style={{width: 75}} alt="Logo" />
+                  <img src={logo} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Teddy Pendergrass - Love T.K.O. (Official Audio)
+                    Paramore: Brick By Boring Brick [OFFICIAL VIDEO]
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Teddy Pendergrass
-
+                    Paramore
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                13M views
+                  137M views
                 </div>
               </div>
             </li>
@@ -375,17 +379,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={logo} style={{width: 75}} alt="Logo" />
+                  <img src={logo} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Paramore: Brick By Boring Brick [OFFICIAL VIDEO]
+                    Katy Perry - Teenage Dream (Official Music Video)
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Paramore
-
+                    Katy Perry
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                137M views 
+                  301M views
                 </div>
               </div>
             </li>
@@ -397,16 +400,16 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={logo} style={{width: 75}} alt="Logo" />
+                  <img src={logo} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Katy Perry - Teenage Dream (Official Music Video)
+                    Yuna - Crush ft. Usher
                   </p>
                   <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Katy Perry
+                    Yuna
                   </p>
                 </div>
                 <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                301M views
+                  105M views
                 </div>
               </div>
             </li>
@@ -418,29 +421,7 @@ export default function Example() {
                   {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
                 </div>
                 <div class="flex-1 min-w-0">
-                <img src={logo} style={{width: 75}} alt="Logo" />
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  Yuna - Crush ft. Usher
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  Yuna
-
-                  </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-               105M views
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="pb-3 sm:pb-4">
-              <div class="flex items-center space-x-4">
-                <div class="flex-shrink-0">
-                  {/* <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}
-                </div>
-                <div class="flex-1 min-w-0">
-                <img src={logo} style={{width: 75}} alt="Logo" />
+                  <img src={logo} style={{ width: 75 }} alt="Logo" />
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                     Neil Sims
                   </p>
